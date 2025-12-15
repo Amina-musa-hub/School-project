@@ -41,19 +41,7 @@ export default function Navbar() {
               About
             </Link>
           </li>
-          <li>
-            <Link
-              className={
-                location.pathname === "/programs"
-                  ? "text-black dark:text-yellow-200 font-semibold underline underline-offset-8 dark:decoration-yellow-200 decoration-blue-900 drop-shadow"
-                  : "text-black dark:text-gray-50/90 font-bold hover:text-blue-900 transition"
-              }
-              to="/programs"
-            >
-              Programs
-            </Link>
-          </li>
-          <li>
+           <li>
             <Link
               className={
                 location.pathname === "/gallery"
@@ -65,6 +53,31 @@ export default function Navbar() {
               Gallery
             </Link>
           </li>
+          <li>
+            <Link
+              className={
+                location.pathname === "/apply"
+                  ? "text-black dark:text-yellow-200 font-semibold underline underline-offset-8 dark:decoration-yellow-200 decoration-blue-900 drop-shadow"
+                  : "text-black dark:text-gray-50/90 font-bold hover:text-blue-900 transition"
+              }
+              to="/apply"
+            >
+              Apply
+            </Link>
+          </li>
+          <li>
+            <Link
+              className={
+                location.pathname === "/Results"
+                  ? "text-black dark:text-yellow-200 font-semibold underline underline-offset-8 dark:decoration-yellow-200 decoration-blue-900 drop-shadow"
+                  : "text-black dark:text-gray-50/90 font-bold hover:text-blue-900 transition"
+              }
+              to="/Results"
+            >
+              Results
+            </Link>
+          </li>
+         
           <li>
             <Link
               className={
@@ -83,7 +96,7 @@ export default function Navbar() {
         </ul>
 
         <Link
-          to="/admissions"
+          to="/apply"
           className="hidden md:inline-block bg-blue-900 dark:bg-yellow-200 dark:text-blue-950 font-semibold text-yellow-100 dark:hover:text-yellow-100 px-5 py-2 rounded-xl  dark:hover:bg-blue-950 *: hover:bg-red-900 transition"
         >
           Apply Now
@@ -151,7 +164,7 @@ export default function Navbar() {
             </li>
             <Link
               onClick={() => setOpen(false)}
-              to="/admissions"
+              to="/apply"
               className="bg-blue-900 dark:bg-yellow-200 dark:text-blue-950 font-semibold text-yellow-100 dark:hover:text-yellow-100 px-6 py-2 rounded-xl"
             >
               Apply Now
