@@ -4,14 +4,11 @@ import { CiLight } from "react-icons/ci";
 
 
 export default function DarkModeToggle() {
-  // الحالة تعتمد على ما تم حفظه مسبقاً في localStorage
   const [isDark, setIsDark] = useState(() => {
-    // قراءة القيمة من localStorage عند تحميل الصفحة
     const saved = localStorage.getItem("dark-mode");
-    return saved ? JSON.parse(saved) : false; // false تعني وضع فاتح افتراضي
+    return saved ? JSON.parse(saved) : false; 
   });
 
-  // عند تغيير الحالة، نحدث كلاس 'dark' و localStorage
   useEffect(() => {
     if (isDark) {
       document.documentElement.classList.add("dark");
@@ -26,7 +23,7 @@ export default function DarkModeToggle() {
   return (
     <button
       onClick={toggleDarkMode}
-      className=" h-10 w-10 pt-2 text-center flex justify-center text-2xl rounded-full bg-blue-900 text-red-500 dark:bg-yellow-300 dark:text-gray-800   transition-colors duration-300"
+      className=" h-10 w-10 pt-2 text-center flex justify-center text-2xl rounded-full bg-blue-900 text-yellow-200 dark:bg-yellow-200 dark:text-gray-800   transition-colors duration-300"
     >
       {isDark ? <CiDark />: <CiLight />}
     </button>
