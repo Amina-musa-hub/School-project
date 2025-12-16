@@ -80,13 +80,13 @@ const Home = () => {
             </p>
             <div className="flex items-center justify-center gap-2 text-blue-100 mb-8">
               <FiMapPin className="text-yellow-200 drop-shadow-lg" />
-              <p className="text-lg max-w-3xl drop-shadow-lg">
+              <p className=" max-w-3xl drop-shadow-lg">
                 No.296 Layin Road Safety, Maikalwa Naibawa Zaria Road, Kumbotso LGA, Kano-Nigeria
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                to="/admissions"
+                to="/apply"
                 className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-blue-900 px-8 py-4 rounded-xl font-bold hover:from-yellow-300 hover:to-yellow-400 transition-all duration-300 flex items-center justify-center gap-2 shadow-2xl transform hover:scale-105"
               >
                 Apply Now <FiArrowRight />
