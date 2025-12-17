@@ -13,6 +13,7 @@ function App() {
   return (
     <Router>
       <div className='font-poppins bg-background dark:bg-red-950 text-gray-800 dark:text-white min-h-screen'>
+        
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
