@@ -11,12 +11,12 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-white/90 dark:bg-blue-900/30 backdrop-blur shadow">
-      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+      <div className="container mx-auto px-4 py-3 flex justify-between items-center ">
         <Link to="/" className="text-xl font-bold text-yellow-600">
           <img src={logo} alt="logo" className="w-12 h-12" />
         </Link>
 
-        <ul className="hidden md:flex font-semibold items-center gap-6 text-gray-700 ">
+        <ul className="hidden md:flex font-semibold  gap-6  text-gray-700 ">
           <li>
             <Link
               className={
@@ -90,17 +90,18 @@ export default function Navbar() {
               Contact
             </Link>
           </li>
-            <li>
-                <DarkModeToggle />
-            </li>
         </ul>
-
-        <Link
+       <div className='gap-8 hidden lg:flex'>
+           <DarkModeToggle />
+                 <Link
           to="/apply"
-          className="hidden md:inline-block bg-blue-900 dark:bg-yellow-200 dark:text-blue-950 font-semibold text-yellow-100 dark:hover:text-yellow-100 px-5 py-2 rounded-xl  dark:hover:bg-blue-950 *: hover:bg-red-900 transition"
+          className=" bg-blue-900 dark:bg-yellow-200 dark:text-blue-950 font-semibold text-yellow-100 dark:hover:text-yellow-100 px-5 py-2 rounded-xl  dark:hover:bg-blue-950 *: hover:bg-red-900 transition"
         >
           Apply Now
         </Link>
+            
+       </div>
+       
 
         <button
           className="md:hidden text-3xl text-blue-900 dark:text-yellow-200"
@@ -134,12 +135,12 @@ export default function Navbar() {
             </Link>
             <Link 
              className={
-                location.pathname === "/programs"
+                location.pathname === "/Results"
                   ? "text-black dark:text-yellow-200 font-semibold underline underline-offset-8 dark:decoration-yellow-200 decoration-blue-900 drop-shadow"
                   : "text-black dark:text-gray-50/90 font-bold hover:text-blue-900 transition"
               }
-            onClick={() => setOpen(false)} to="/programs">
-              Programs
+            onClick={() => setOpen(false)} to="/Results">
+              Results
             </Link>
             <Link 
              className={

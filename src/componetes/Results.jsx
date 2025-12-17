@@ -14,7 +14,7 @@ const Results = () => {
 
   return (
     <div className="pt-20">
-      <section className="relative bg-gradient-to-br from-violet-900 via-purple-800 to-indigo-700 text-white py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-blue-900 via-indigo-800 to-purple-900 text-white py-20 overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="absolute inset-0">
           <div className="absolute top-16 left-16 w-80 h-80 bg-violet-400/10 rounded-full blur-3xl"></div>

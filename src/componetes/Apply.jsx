@@ -17,7 +17,7 @@ const Apply = () => {
 
   return (
     <div className="pt-20">
-      <section className="relative bg-gradient-to-br from-emerald-900 via-green-800 to-teal-700 text-white py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-blue-900 via-indigo-800 to-purple-900 text-white py-20 overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="absolute inset-0">
           <div className="absolute top-10 right-10 w-72 h-72 bg-emerald-400/10 rounded-full blur-3xl"></div>
