@@ -2,9 +2,10 @@ import { Link } from 'react-router-dom';
 import { FiFacebook, FiMail, FiMapPin } from 'react-icons/fi';
 import logo from '../assets/school.png';
 
+
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-br from-blue-900 via-indigo-800 to-purple-900 text-white py-12">
+    <footer className="bg-gradient-to-b from-blue-950 via-blue-800 to-blue-950 dark:from-gray-900/70 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8">
           <div>

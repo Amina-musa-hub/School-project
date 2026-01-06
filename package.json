@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -14,7 +14,9 @@
     "@emotion/styled": "^11.14.1",
     "@mui/material": "^7.3.6",
     "@react-icons/all-files": "^4.1.0",
+    "flowbite": "^4.0.1",
     "framer-motion": "^12.23.26",
+    "lucide-react": "^0.562.0",
     "motion": "^12.23.26",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",

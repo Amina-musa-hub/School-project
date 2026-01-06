@@ -23,7 +23,7 @@ export default function DarkModeToggle() {
   return (
     <button
       onClick={toggleDarkMode}
-      className=" h-10 w-10 pt-2 text-center flex justify-center text-2xl rounded-full bg-blue-900 text-yellow-200 dark:bg-yellow-200 dark:text-gray-800   transition-colors duration-300"
+      className=" h-10 w-10 pt-2 text-center flex justify-center text-2xl rounded-full bg-blue-950 text-white dark:bg-yellow-400 dark:text-gray-800   transition-colors duration-300"
     >
       {isDark ? <CiDark />: <CiLight />}
     </button>
