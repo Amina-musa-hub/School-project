@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import images from "./stories.js";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { FiChevronLeft, FiChevronRight, FiArrowRight } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 export default function StorySlider() {
   const [index, setIndex] = useState(0);
@@ -53,6 +54,12 @@ export default function StorySlider() {
             {images[index].description}
           </p>
           <div className="flex items-center gap-6">
+            <Link
+              to="/gallery"
+              className="inline-flex items-center gap-2 bg-blue-950 dark:bg-yellow-400 text-white dark:text-blue-950 px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity"
+            >
+              View Full Gallery <FiArrowRight />
+            </Link>
             <span className="text-gray-300 text-sm">
               {index + 1} / {images.length}
             </span>

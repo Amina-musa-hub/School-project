@@ -310,11 +310,13 @@ const Gallery = () => {
                         alt={item.title}
                         className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                       />
+                      {/* Dark overlay */}
+                      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-300"></div>
                       {item.type === "image" && (
                         <div className="absolute inset-0 flex items-center justify-center">
                           <button
                             onClick={() => setActiveImage(item.image)}
-                            className="w-16 h-16 bg-white/60 dark:bg-gray-800 rounded-full flex items-center justify-center hover:scale-105 transition"
+                            className="w-16 h-16 bg-white/80 dark:bg-gray-800/90 rounded-full flex items-center justify-center hover:scale-105 transition shadow-lg"
                           >
                             <FaRegEye className="text-blue-950 dark:text-yellow-400 text-2xl" />
                           </button>

@@ -6,14 +6,20 @@ import {
   FiAward,
   FiMapPin,
   FiClock,
+  FiTarget,
+  FiHeart,
+  FiStar,
 } from "react-icons/fi";
+import { FaGraduationCap, FaPray } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "../assets/school.png";
 import image3 from "../assets/image copy 3.png";
 import image4 from "../assets/image copy 4.png";
 import image5 from "../assets/image copy 5.png";
+import principal from "../assets/principal.png";
 import { useState, useEffect } from "react";
 import StoryScreen from "./StoryScreen";
+import CountUp from "./layout/CountUp";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 60 },
@@ -119,6 +125,72 @@ const Home = () => {
     },
   ];
 
+  const stats = [
+    {
+      icon: <FiUsers className="w-6 h-6" />,
+      number: <CountUp from={10} to={500} duration={1} />,
+      label: "Students",
+      description: "Enrolled across all programs",
+    },
+    {
+      icon: <FiAward className="w-6 h-6" />,
+      number: <CountUp from={0} to={15} duration={1} />,
+      label: "Years Experience",
+      description: "Of educational excellence",
+    },
+    {
+      icon: <FiBookOpen className="w-6 h-6" />,
+      number: <CountUp from={0} to={6} duration={1} />,
+      label: "Programs",
+      description: "Comprehensive curriculum",
+    },
+    {
+      icon: <FaGraduationCap className="w-6 h-6" />,
+      number: <CountUp from={0} to={50} duration={1} />,
+      label: "Graduates",
+      description: "Success stories annually",
+    },
+  ];
+
+  const academicStreams = [
+    {
+      title: "Science Stream",
+      icon: "🔬",
+      description: "Advanced scientific education with modern laboratories",
+      subjects: ["Physics", "Chemistry", "Biology", "Mathematics"],
+    },
+    {
+      title: "Arts Stream", 
+      icon: "🎨",
+      description: "Creative and humanities-focused curriculum",
+      subjects: ["Literature", "History", "Government", "CRS/IRS"],
+    },
+    {
+      title: "Commercial Stream",
+      icon: "💼", 
+      description: "Business and commerce education",
+      subjects: ["Accounting", "Economics", "Commerce", "Marketing"],
+    },
+  ];
+
+  const coreValues = [
+    {
+      icon: <FiTarget className="w-8 h-8" />,
+      title: "Excellence",
+      description: "Striving for the highest standards in education and character development",
+    },
+    {
+      icon: <FiHeart className="w-8 h-8" />,
+      title: "Islamic Values",
+      description: "Integrating Islamic principles with modern education for holistic development",
+    },
+    {
+      icon: <FiStar className="w-8 h-8" />,
+      title: "Innovation",
+      description: "Embracing technology and modern teaching methods for effective learning",
+    },
+  ];
+
   return (
     <div className="pt-20">
       {/* Hero Section */}
@@ -209,11 +281,182 @@ const Home = () => {
           </button>
         </motion.div>
       </section>
-      
+
+      {/* Principal's Welcome */}
+      <section className="py-16 bg-white dark:bg-gray-950">
+        <div className="max-w-7xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="grid md:grid-cols-2 gap-12 items-center"
+          >
+            <div>
+              <h2 className="text-3xl font-bold mb-6">Welcome Message</h2>
+              <p className="text-lg mb-6 leading-relaxed">
+                "At Dr. Kabiru Gwarzo Academy, we are committed to nurturing young minds through a perfect blend of modern education and Islamic values. Our mission is to develop well-rounded individuals who excel academically while maintaining strong moral foundations."
+              </p>
+              <div className="mb-6">
+                <h4 className="font-semibold text-blue-950 dark:text-yellow-400">Adamu Muhammad Alkali</h4>
+                <p className="text-gray-600 dark:text-gray-400">Principal</p>
+              </div>
+              <Link
+                to="/about"
+                className="inline-flex items-center gap-2 bg-blue-950 dark:bg-yellow-400 text-white dark:text-blue-950 px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity"
+              >
+                Learn More About Us <FiArrowRight />
+              </Link>
+            </div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <img
+                src={principal}
+                alt="Principal"
+                className="w-full max-w-md mx-auto rounded-lg shadow-xl"
+              />
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-yellow-400 rounded-full flex items-center justify-center">
+                <FaGraduationCap className="w-12 h-12 text-blue-950" />
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Statistics Section */}
+      <section className="py-16 bg-blue-950 dark:bg-gray-800 text-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold mb-4">Our Achievements</h2>
+            <p className="text-yellow-400">Building excellence through dedication and commitment</p>
+          </motion.div>
+          
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-8"
+          >
+            {stats.map((stat, i) => (
+              <motion.div
+                key={i}
+                variants={fadeUp}
+                className="text-center"
+              >
+                <div className="w-16 h-16 mx-auto bg-yellow-400 text-blue-950 flex items-center justify-center rounded-full mb-4">
+                  {stat.icon}
+                </div>
+                <div className="text-3xl font-bold text-yellow-400 mb-2">
+                  {stat.number}+
+                </div>
+                <h3 className="font-semibold text-lg mb-1">{stat.label}</h3>
+                <p className="text-sm opacity-80">{stat.description}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Academic Streams */}
+      <section className="py-16 bg-gray-50 dark:bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold mb-4">Academic Streams</h2>
+            <p className="text-gray-600 dark:text-gray-400">Choose your path to success with our specialized programs</p>
+          </motion.div>
+          
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid md:grid-cols-3 gap-8"
+          >
+            {academicStreams.map((stream, i) => (
+              <motion.div
+                key={i}
+                variants={fadeUp}
+                whileHover={{ scale: 1.02 }}
+                className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border-l-4 border-blue-950 dark:border-yellow-400"
+              >
+                <div className="text-4xl mb-4">{stream.icon}</div>
+                <h3 className="font-bold text-xl mb-3">{stream.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-4">{stream.description}</p>
+                <div className="space-y-2">
+                  <h4 className="font-semibold text-sm text-blue-950 dark:text-yellow-400">Key Subjects:</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {stream.subjects.map((subject, idx) => (
+                      <span
+                        key={idx}
+                        className="bg-blue-50 dark:bg-gray-700 text-blue-950 dark:text-yellow-400 px-3 py-1 rounded-full text-sm"
+                      >
+                        {subject}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
       {/* Gallery */}
-      <section className="py-16 bg-white dark:bg-gray-900">
+      <section className="py-16 bg-gray-50 dark:bg-gray-900">
         <h2 className="text-3xl font-bold text-center mb-12">Our Gallery</h2>
-         <StoryScreen />
+        <StoryScreen />
+      </section>
+
+      {/* Core Values */}
+      <section className="py-16 bg-white dark:bg-gray-950">
+        <div className="max-w-7xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold mb-4">Our Core Values</h2>
+            <p className="text-gray-600 dark:text-gray-400">The principles that guide our educational philosophy</p>
+          </motion.div>
+          
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid md:grid-cols-3 gap-8"
+          >
+            {coreValues.map((value, i) => (
+              <motion.div
+                key={i}
+                variants={fadeUp}
+                whileHover={{ scale: 1.05 }}
+                className="text-center p-6"
+              >
+                <div className="w-20 h-20 mx-auto bg-blue-950 dark:bg-yellow-400 text-white dark:text-blue-950 flex items-center justify-center rounded-full mb-6">
+                  {value.icon}
+                </div>
+                <h3 className="font-bold text-xl mb-4">{value.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{value.description}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
       </section>
       {/*<Gallery />*/} 
 
