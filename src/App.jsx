@@ -8,12 +8,13 @@ import Results from './componetes/Results';
 import Price from './componetes/Price';
 import Contact from './componetes/Contact';
 import Footer from './componetes/Footer';
+import ScrollToTop from './componetes/ScrollToTop';
 
 function App() {
   return (
     <Router>
       <div className='font-poppins bg-background dark:bg-gray-900 text-gray-800 dark:text-white min-h-screen'>
-        
+        <ScrollToTop />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
